@@ -14,8 +14,12 @@ RUN apt-get update -y && \
     apt-get install apt-utils -y && \
     apt-get upgrade -y
 
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git
+
 RUN apt-get install aptitude -y && \
-    aptitude install --with-recommends wget lsb-core git cmake -y && \
+    aptitude install --with-recommends wget lsb-core cmake -y && \
     aptitude install --with-recommends libopencv-dev -y
 
 RUN git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git
